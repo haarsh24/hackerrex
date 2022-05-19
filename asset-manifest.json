@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/hackerrex/static/css/main.033a678d.css",
+    "main.js": "/hackerrex/static/js/main.c2f3aa2e.js",
+    "static/media/avatar-2.jpg": "/hackerrex/static/media/avatar-2.383b7a7810a2ddf732f4.jpg",
+    "static/media/avatar-4.jpg": "/hackerrex/static/media/avatar-4.861a10dd0e83c82d9add.jpg",
+    "static/media/avatar-1.jpg": "/hackerrex/static/media/avatar-1.fcf5623a28d33ed492ea.jpg",
+    "static/media/avatar-3.jpg": "/hackerrex/static/media/avatar-3.16e9390fa187427c12cf.jpg",
+    "static/media/hacker-1.png": "/hackerrex/static/media/hacker-1.f0f3db4812df80e107f1.png",
+    "index.html": "/hackerrex/index.html",
+    "main.033a678d.css.map": "/hackerrex/static/css/main.033a678d.css.map",
+    "main.c2f3aa2e.js.map": "/hackerrex/static/js/main.c2f3aa2e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.033a678d.css",
+    "static/js/main.c2f3aa2e.js"
+  ]
+}
