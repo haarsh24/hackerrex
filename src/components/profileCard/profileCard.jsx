@@ -12,7 +12,7 @@ const ProfileCard = () => {
                     loading="lazy"
                     src={profileImage2}
                     className='mr-4 w-32 h-32  rounded-full  ml-2' />
-
+                <div className="flex flex-col">
                 <div className='flex flex-col py-4 '>
                     <div className='flex items-center'>
                         <div className="flex flex-col">
@@ -40,13 +40,15 @@ const ProfileCard = () => {
                         <p>Tech Enthusiast</p>
                        
                     </div>
-                    <div className="flex my-3">
-                    <button className='py-1 px-4 mr-4 bg-sky-500 text-white rounded hover:bg-sky-500/50'>Edit</button>
-                        <button className='py-1 px-4 text-sky-500 border border-sky-500 bg-white rounded hover:text-white hover:bg-sky-500/50'>Logout</button>
-                        </div>
+                    
                 </div>
 
-
+                <div className="flex py-3">
+                    <button className='py-1 px-4 mr-4 bg-sky-500 text-white rounded hover:bg-sky-500/50'>Edit</button>
+                    <button className='py-1 px-4 text-sky-500 border border-sky-500 bg-white rounded hover:text-white hover:bg-sky-500/50'>Logout</button>
+                    
+                </div>
+                    </div>
             </div>
         </>
     )

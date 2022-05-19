@@ -8,7 +8,7 @@ function App() {
   const routeElement = useRoutes(routes);
   return (
     <>
-       
+  
       <Navbar/>
       <div className="App bg-[#07080B] text-[#9B9B9C]">
         {routeElement} 

@@ -20,7 +20,8 @@ const Navbar = () => {
                     loading="lazy"
                     src={profileImage}
                     className='w-10 h-10 m-1 rounded-full ' />
-            </Link>
+                </Link>
+          
         </div>
     </nav>
     )

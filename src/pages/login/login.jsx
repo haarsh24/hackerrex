@@ -2,8 +2,8 @@ import { Link } from "react-router-dom"
 const Login = () => {
     return (
         <>
-            <div className="w-full h-full flex  py-12 justify-center ">
-            <form className="shadow-md rounded py-8 px-8 pt-6 pb-8 mb-4">
+            <div className="w-full h-full  flex h-[100vh] py-24 justify-center align-center ">
+            <form className="shadow-md bg-[#141820] rounded-xl py-8 px-8 pt-6 pb-8 mb-4">
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
                         Email

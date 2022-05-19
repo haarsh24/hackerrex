@@ -7,12 +7,12 @@ const Notification = () => {
     const arr = [1, 2, 3];
     return (
         <>
-         <div className='grid lg:grid-cols-3  md:grid-cols-2 grid-cols-1'>
+         <div className='grid lg:grid-cols-3  mt-14 md:grid-cols-2 grid-cols-1'>
             <SideBar />
                 <BottomNav />
                 <main>
                 {arr.map(item =>
-                    <div className=' my-4'>
+                    <div className='bg-[#141820] rounded-xl mt-14 my-4'>
                         <div className='flex pt-4'>
                             <img
                                 alt="profile"
