@@ -3,13 +3,14 @@ import postImage from "../../assets/avatar-4.jpg"
 import { useAuth ,useModal} from '../../hooks/selectors';
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { showModal } from '../../store/feature/modalSlice';
 import { deletePost, editPost } from '../../store/feature/postSlice';
 const PostCard = ({post}) => {
     const [showDropDown, setShowDropDown] = useState(false);
     const { user } = useAuth();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const { _id, content, firstName, lastName, username, profileImage, mediaContent } = post;
     const editPostHandler = () => {
         dispatch(showModal(post));
@@ -101,7 +102,9 @@ const PostCard = ({post}) => {
                     </button>
                 </div>
                 <div>
-                    <button className='w-10 h-10 flex justify-center items-center hover:text-sky-50 hover:bg-sky-500/25 rounded-full'>
+                <button
+                        className='w-10 h-10 flex justify-center items-center hover:text-sky-50 hover:bg-sky-500/25 rounded-full'
+                        onClick={() => { navigate(`/post/${post._id}`); }}>
                         <span className="material-icons">
                             chat_bubble_outline
                         </span>

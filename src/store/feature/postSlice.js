@@ -47,6 +47,18 @@ export const deletePost = createAsyncThunk(
             toast.error("Failed to delete post.")
         }
     })
+
+    export const postComment = createAsyncThunk(
+        "post/postComment",
+        async ({ postId, comment }) => {
+            try {
+                const { data: posts } = await axios.post(`/api/posts/comment/${postId}`, { comment });
+                return posts;
+            } catch (error) {
+                toast.error("Failed to post comment.")
+            }
+        }
+    )
 export const postSlice = createSlice({
     name: "posts",
     initialState,
@@ -89,6 +101,9 @@ export const postSlice = createSlice({
         [deletePost.rejected]: (state) => {
             state.error = "Could not delete the post!";
         },
+        [postComment.fulfilled]: (state, { payload }) => {
+            state.posts = payload.posts.reverse();
+        }
     },
 });
 export const postReducer = postSlice.reducer;
