@@ -4,21 +4,30 @@ import { PostCard } from '../../components/postCard/postCard';
 import { PeopleToFollow } from '../../components/peopleToFollow/peopleToFollow';
 import { BottomNav } from '../../components/navbar/bottomNav';
 import { PostModal } from '../../components/postModal/postModal';
+import { usePost } from '../../hooks/selectors'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { getPost } from '../../store/feature/postSlice'
 const Explore = () => {
-    const arr = [1, 2, 3]
+    const arr = [1, 2, 3];
+    const { posts } = usePost();
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getPost());
+    }, [])
     return (
-        <>
             <div className='grid lg:grid-cols-3 mt-14  md:grid-cols-2 grid-cols-1'>
             <SideBar />
             <BottomNav />
-            
-                <main className=''>
-                <PostModal />
-                {arr.map(item => <PostCard />)}
-            </main>
+            <div className='flex flex-col'>
+           <  PostModal/>
+            <main>
+                {posts.map(post => <PostCard key={post._id} post={post} />)}
+                </main>
+                </div>
             <PeopleToFollow />
             </div>
-        </>
+       
     )
 }
 

@@ -33,6 +33,7 @@ export const loginUser = createAsyncThunk(
             });
             localStorage.setItem("token", encodedToken)
             localStorage.setItem('userData', JSON.stringify(foundUser));
+            axios.defaults.headers.common["authorization"] = encodedToken;
             return {
                 foundUser,
                 encodedToken
@@ -53,6 +54,7 @@ export const signupUser = createAsyncThunk(
             localStorage.setItem("token", encodedToken)
             localStorage.setItem('userData', JSON.stringify(createdUser));
             return { createdUser, encodedToken };
+            axios.defaults.headers.common["authorization"] = encodedToken;
         } catch (error) {
             toast.error(error.response.data.message);
             return rejectWithValue("Email or password is incorrect");
