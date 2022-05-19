@@ -3,7 +3,7 @@ import { SideBar } from '../../components/sideBar/sideBar';
 import { PostCard } from '../../components/postCard/postCard';
 import { PeopleToFollow } from '../../components/peopleToFollow/peopleToFollow';
 import { BottomNav } from '../../components/navbar/bottomNav';
-import { PostModal } from 'components/postModal/postModal';
+import { PostModal } from '../../components/postModal/postModal';
 const Explore = () => {
     const arr = [1, 2, 3]
     return (

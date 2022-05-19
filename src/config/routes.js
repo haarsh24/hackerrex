@@ -1,4 +1,10 @@
-import { Login, Profile, Signup, Explore, Notification, Bookmark } from "pages"
+import { Login } from "../pages/login/login";
+import { Signup } from "../pages/signup/signup";
+import { Explore } from "../pages/explore/explore";
+import { Notification } from "../pages/notification/notification";
+import { Bookmark } from "../pages/bookmark/bookmark";
+import { Profile } from "../pages/profile/profile";
+
 
 const routes = [
     {
