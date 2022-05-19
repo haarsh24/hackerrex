@@ -1,12 +1,22 @@
 import "./App.css";
-
+import { routes } from "./config/routes"
+import { useRoutes } from "react-router-dom"
+import { ScrollToTop, Toast} from "components"
+import { Navbar } from "components/navbar/navbar";
 
 function App() {
+  const routeElement = useRoutes(routes);
   return (
-    <div className="App">
-      <h1>HackerRex</h1>
-      <h3>Let's hack together</h3>
-    </div>
+    <>
+        {/* <ScrollToTop />
+      // <Toast />
+       */}
+      <Navbar/>
+      <div className="App bg-[#07080B] text-[#9B9B9C]">
+        {routeElement} 
+      </div>
+      </>
+   
   );
 }
 
