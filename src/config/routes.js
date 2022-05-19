@@ -4,8 +4,7 @@ import { Explore } from "../pages/explore/explore";
 import { Notification } from "../pages/notification/notification";
 import { Bookmark } from "../pages/bookmark/bookmark";
 import { Profile } from "../pages/profile/profile";
-
-
+import { PrivateRoute } from '../components/privateRoute/privateRoute';
 const routes = [
     {
         path: "/login",
@@ -16,20 +15,27 @@ const routes = [
         element: <Signup />,
     },
     {
-        path: "/profile",
-        element: <Profile />,
-    },
-    {
-        path: "/bookmark",
-        element: <Bookmark />,
-    },
-    {
-        path: "/notifications",
-        element: <Notification />,
-    },
-    {
         path: "/",
-        element: <Explore />,
-    },
+        element: <PrivateRoute />,
+        children: [
+            {
+                path: "/profile",
+                element: <Profile />,
+            },
+            {
+                path: "/bookmark",
+                element: <Bookmark />,
+            },
+           
+            {
+                path: "/notifications",
+                element: <Notification />,
+            },
+            {
+                path: "/",
+                element: <Explore />,
+            },
+        ]
+    }
 ]
 export { routes }
