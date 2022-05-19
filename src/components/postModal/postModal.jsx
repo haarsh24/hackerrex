@@ -66,7 +66,7 @@ const PostModal = () => {
                     className='p-2 flex flex-col'>
                     <textarea
                         placeholder="What's on your mind ?"
-                        className='w-full h-36 p-3 m-1 resize-none rounded border focus:outline-2 focus:outline-sky-500 mx-auto'
+                        className='w-full h-36 p-3 m-1  bg-[#141820] resize-none rounded border focus:outline-2 focus:outline-sky-500 mx-auto'
                         maxLength={postLimit}
                         onChange={(e) => setContent(e.target.value)}
                         value={content}></textarea>
