@@ -61,6 +61,21 @@ export const signupUser = createAsyncThunk(
         }
     }
 );
+export const editUser = createAsyncThunk(
+    "auth/editUser",
+    async ({ userData }) => {
+        try {
+            const {
+                data: { user },
+            } = await axios.post("/api/users/edit", { userData });
+            localStorage.setItem('userData', JSON.stringify(user));
+            return user;
+        } catch (error) {
+            toast.error("Not able to update profile.")
+        }
+    }
+);
+
 export const authSlice = createSlice({
     name: "auth",
     initialState,
@@ -101,6 +116,11 @@ export const authSlice = createSlice({
         }) => {
             state.error = payload;
             state.isLoading = false;
+        },
+        [editUser.fulfilled]: (state, { payload }) => {
+            state.isLoading = false;
+            state.user = payload;
+
         }
     }
 })
