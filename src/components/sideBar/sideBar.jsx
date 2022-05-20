@@ -5,7 +5,7 @@ import { useAuth } from '../../hooks/selectors';
 const SideBar = () => {
     const { user } = useAuth();
     return (
-      <aside className='hidden bg-[#141820]  rounded-xl my-14 justify-self-start mx-auto md:block  p-4 sticky w-full max-w-[16rem] top-[10vh] h-[60vh] rounded'>
+      <aside className='hidden bg-[#141820]  rounded-2xl my-14 justify-self-start mx-auto md:block  p-4 sticky w-full max-w-[16rem] top-[10vh] h-[60vh] rounded'>
          <div className="flex items-center">
             <img src={logo} className="w-16" />
                 <span className=" title text-3xl text-white ">
@@ -21,7 +21,7 @@ const SideBar = () => {
                         title={name}
                         className={({ isActive }) =>
                             `${isActive ? " text-sky-50" : ""
-                            } p-2 flex w-full items-center rounded hover:text-sky-50 hover:bg-sky-500 rounded `
+                            } p-2 flex w-full items-center rounded-2xl hover:text-sky-50 hover:bg-sky-500 rounded `
                         }
                     >
                         <span className='material-icons'>

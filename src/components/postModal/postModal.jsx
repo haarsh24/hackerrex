@@ -60,13 +60,13 @@ const PostModal = () => {
     }
     return (
         <>
-            <aside className='mt-14  mx-auto  bg-[#0C0F13]  rounded-xl m-10  rounded-md w-full max-w-[35rem] top-[10vh] h-[35vh] rounded'>
+            <aside className='mt-14  mx-auto  bg-[#0C0F13]  rounded-2xl m-10  rounded-md w-full max-w-[35rem] top-[10vh] h-[35vh] rounded'>
                 <form
                     onSubmit={submitHandler}
                     className='p-2 flex flex-col'>
                     <textarea
                         placeholder="What's on your mind ?"
-                        className='w-full h-36 p-3 m-1  bg-[#141820] resize-none rounded border focus:outline-2 focus:outline-sky-500 mx-auto'
+                        className='w-full h-36 p-3 m-1  bg-[#141820] resize-none rounded-2xl border focus:outline-2 focus:outline-sky-500 mx-auto'
                         maxLength={postLimit}
                         onChange={(e) => setContent(e.target.value)}
                         value={content}></textarea>

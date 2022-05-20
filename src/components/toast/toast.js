@@ -14,6 +14,7 @@ const Toast = () => {
             limit={5}
             pauseOnFocusLoss
             draggable
+            toastStyle={{backgroundColor: "#0C0F13" }}
             pauseOnHover />, document.getElementById("modal")
     )
 }

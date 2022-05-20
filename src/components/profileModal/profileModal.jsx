@@ -46,9 +46,9 @@ const ProfileModal = () => {
         dispatch(closeModal());
     };
     return (
-        <div className='flex justify-center fixed top-0 bottom-0 right-0 left-0 h-screen w-screen z-10 backdrop-blur-[1px] bg-black/40'>
+        <div className='flex justify-center fixed top-0 bottom-0  right-0 left-0 h-screen w-screen z-10 backdrop-blur-[1px] '>
 
-            <aside className='flex flex-col justify-center fixed  w-screen z-10  fixed p-4 bg-neutral-50  top-[10vh] rounded max-w-sm'>
+            <aside className=' bg-[#141820]  rounded-2xl flex flex-col justify-center fixed  w-screen z-10  fixed p-4   top-[10vh] max-w-sm'>
 
                 <div className='flex'>
                     <h2>Edit Profile</h2>
@@ -77,7 +77,7 @@ const ProfileModal = () => {
                     </label>
                 </div>
                 <form
-                    className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+                    className="bg-[#141820]  shadow-md rounded-2xl px-8 pt-6 pb-8 mb-4"
                     onSubmit={profileSubmitHandler}
                 >
                     <div className="mb-4">

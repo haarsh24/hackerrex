@@ -4,7 +4,7 @@ import profileImage2 from "../../assets/avatar-2.jpg"
 const PeopleToFollow = () => {
     return (
         <>
-             <aside className='hidden bg-[#141820] rounded-xl lg:block lg:right-aside sticky top-[10vh] my-14 max-w-[20rem] mx-auto w-full rounded h-max py-3'>
+             <aside className='hidden bg-[#141820] rounded-2xl lg:block lg:right-aside sticky top-[10vh] my-14 max-w-[20rem] mx-auto w-full rounded h-max py-3'>
             <div className='mt-2 ml-4 text-xl font-semibold'>
                People to follow?
                 </div>

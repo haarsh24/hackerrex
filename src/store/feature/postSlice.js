@@ -12,6 +12,7 @@ export const getPost = createAsyncThunk("posts/getPost",
     async () => {
         try {
             const { data: posts } = await axios.get("/api/posts")
+            
             return posts;
         } catch (error) {
             toast.error("Failed to get post.")
@@ -22,6 +23,7 @@ export const addPost = createAsyncThunk(
     async (postData) => {
         try {
             const { data: posts } = await axios.post("/api/posts", { postData })
+            toast.success("Added Post")
             return posts;
         } catch (error) {
             toast.error("Failed to post.")
@@ -32,6 +34,7 @@ export const editPost = createAsyncThunk(
     async (postData) => {
         try {
             const { data: { posts } } = await axios.post(`/api/posts/edit/${postData._id}`, { postData })
+            toast.success("Post Edited")
             return posts;
         } catch (error) {
             toast.error("Failed to edit post.")
@@ -43,6 +46,7 @@ export const deletePost = createAsyncThunk(
     async (postID) => {
         try {
             const { data: posts } = await axios.delete(`/api/posts/${postID}`)
+            toast.success("Post Deleted")
             return posts;
         } catch (error) {
             toast.error("Failed to delete post.")
@@ -54,6 +58,7 @@ export const deletePost = createAsyncThunk(
         async ({ postId, comment }) => {
             try {
                 const { data: posts } = await axios.post(`/api/posts/comment/${postId}`, { comment });
+                toast.success("Comment successful")
                 return posts;
             } catch (error) {
                 toast.error("Failed to post comment.")
@@ -65,6 +70,7 @@ export const deletePost = createAsyncThunk(
         async (postID) => {
             try {
                 const { data: { posts } } = await axios.post(`/api/posts/like/${postID}`)
+                toast.success("Liked the Post.")
                 return posts;
             } catch (error) {
                 toast.error("Failed to like post");
@@ -76,6 +82,7 @@ export const deletePost = createAsyncThunk(
         async (postID) => {
             try {
                 const { data: { posts } } = await axios.post(`/api/posts/dislike/${postID}`)
+                toast.success("Disliked the Post.")
                 return posts;
             } catch (error) {
                 toast.error("Failed to dislike post");
@@ -87,6 +94,7 @@ export const deletePost = createAsyncThunk(
         async (postId) => {
             try {
                 const { data: { bookmarks } } = await axios.post(`/api/users/bookmark/${postId}`)
+                toast.success("Post Bookmarked !")
                 return bookmarks;
             } catch (error) {
                 toast.error("Failed to bookmark post.")
@@ -98,6 +106,7 @@ export const deletePost = createAsyncThunk(
         async (postId) => {
             try {
                 const { data: { bookmarks } } = await axios.post(`/api/users/remove-bookmark/${postId}`)
+                toast.success("Post removed from bookmark")
                 return bookmarks;
             } catch (error) {
                 toast.error("Failed to bookmark posts.")

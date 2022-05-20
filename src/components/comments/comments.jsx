@@ -6,7 +6,7 @@ const Comments = ({ comment,username,
     profileImage, } ) => {
     return (
         <>
-             <div className='flex items-center  bg-[#0C0F13] rounded-xl p-2 mx-4 my-4'>
+             <div className='flex items-center  bg-[#0C0F13] rounded-2xl p-2 mx-4 my-4'>
             <Link to="/">
                 {profileImage ? (<img
                     alt="profile"
