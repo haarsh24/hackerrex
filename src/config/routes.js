@@ -20,7 +20,7 @@ const routes = [
         element: <PrivateRoute />,
         children: [
             {
-                path: "/profile",
+                path: "/profile/:userId",
                 element: <Profile />,
             },
             {
