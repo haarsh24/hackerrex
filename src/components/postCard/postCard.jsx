@@ -1,16 +1,37 @@
 import profileImage from "../../assets/avatar-1.jpg"
 import postImage from "../../assets/avatar-4.jpg"
-import { useAuth ,useModal} from '../../hooks/selectors';
+import { useAuth ,useModal,usePost} from '../../hooks/selectors';
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { showModal } from '../../store/feature/modalSlice';
-import { deletePost, editPost } from '../../store/feature/postSlice';
+import { addBookMarkPost, deletePost, disLikePost, editPost, likePost, removeBookMarkPost } from '../../store/feature/postSlice';
+import { getPostBookmarkStatus, getPostLikedStatus } from "../../utilities/utilities"
 const PostCard = ({post}) => {
     const [showDropDown, setShowDropDown] = useState(false);
     const { user } = useAuth();
+    const navigate = useNavigate();
+    const { bookmarks } = usePost();
     const dispatch = useDispatch();
-    const { _id, content, firstName, lastName, username, profileImage, mediaContent } = post;
+
+    const { _id, content, firstName, lastName, username, profileImage, mediaContent, likes } = post;
+    const isPostLiked = getPostLikedStatus(user, likes);
+    const isBookmarked = getPostBookmarkStatus(_id, bookmarks);
+    const likePostHandler = () => {
+        if (!isPostLiked) {
+            dispatch(likePost(_id));
+        } else {
+            dispatch(disLikePost(_id));
+        }
+    }
+    const bookmarkHandler = () => {
+        if (!isBookmarked) {
+            dispatch(addBookMarkPost(_id));
+        } else {
+            dispatch(removeBookMarkPost(_id));
+        }
+    }
+
     const editPostHandler = () => {
         dispatch(showModal(post));
         setShowDropDown(false)
@@ -74,43 +95,39 @@ const PostCard = ({post}) => {
             <p className="py-2 px-5 text-sm lg:text-base cursor-pointer mb-2">
                 {content}
             </p>
-                {/* <button className='mr-3 w-10 h-8 flex justify-center items-center hover:text-sky-50 hover:bg-sky-500/25 rounded-full'>
-                    <span className="material-icons">
-                        more_horiz
-                    </span>
-                </button>
-            </section>
-            <div className='my-1'>
-                <Link to="/">
-                    <img
-                        alt="profile"
-                        loading="lazy"
-                        src={postImage}
-                        className=' rounded-l' />
-                </Link>
-            </div>
-            <p className="py-1 px-5 text-sm lg:text-base cursor-pointer ">
-                Whatever comes in the way , take it with the smile .
-            </p> */}
             <div className='flex justify-between py-1 mx-5'>
             <div className=''>
-                    <button className='w-10 h-10 flex justify-center items-center hover:text-sky-50 hover:bg-sky-500/25 rounded-full'>
-                        <span className="material-icons">
-                            favorite_border
+            <button
+                        className='w-10 h-10 flex justify-center items-center hover:text-sky-50 hover:bg-sky-500/25 rounded-full'
+                        onClick={likePostHandler}>
+                        {isPostLiked ? (<span className="material-icons">
+                            favorite
                         </span>
+                        ) : (
+                            <span className="material-icons">
+                                favorite_border
+                            </span>)}
                     </button>
                 </div>
                 <div>
-                    <button className='w-10 h-10 flex justify-center items-center hover:text-sky-50 hover:bg-sky-500/25 rounded-full'>
+                <button
+                        className='w-10 h-10 flex justify-center items-center hover:text-sky-50 hover:bg-sky-500/25 rounded-full'
+                        onClick={() => { navigate(`/post/${post._id}`); }}>
                         <span className="material-icons">
                             chat_bubble_outline
                         </span>
                     </button>
                 </div>
-                <button className='w-10 h-10 flex justify-center items-center hover:text-sky-50 hover:bg-sky-500/25 rounded-full'>
-                    <span className="material-icons">
+                <button className='w-10 h-10 flex justify-center items-center hover:text-sky-50 hover:bg-sky-500/25 rounded-full'
+                    onClick={bookmarkHandler}>
+                    {isBookmarked ? (
+                        <span className="material-icons">
+                            bookmark
+                        </span>
+                    ) : (<span className="material-icons">
                         bookmark_border
-                    </span>
+                    </span>)}
+
                 </button>
                 </div>
        </article> 

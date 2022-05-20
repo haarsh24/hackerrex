@@ -5,6 +5,7 @@ import { Notification } from "../pages/notification/notification";
 import { Bookmark } from "../pages/bookmark/bookmark";
 import { Profile } from "../pages/profile/profile";
 import { PrivateRoute } from '../components/privateRoute/privateRoute';
+import {SinglePost} from "../pages/singlePost/singlePost"
 const routes = [
     {
         path: "/login",
@@ -21,6 +22,10 @@ const routes = [
             {
                 path: "/profile",
                 element: <Profile />,
+            },
+            {
+                path: "/post/:postId",
+                element: <SinglePost />,
             },
             {
                 path: "/bookmark",

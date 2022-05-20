@@ -10,7 +10,22 @@ import { formatDate, requiresAuth } from "../utils/authUtils";
  * send GET Request at /api/users
  * */
 
-export const getAllUsersHandler = function () {
+export const getAllUsersHandler = function (schema, request) {
+  const searchQuery = request.queryParams?.search.trim();
+
+  if (searchQuery) {
+    const searchedUsers = this.db.users.filter(
+      ({ username, firstName, lastName }) => {
+        const fullName = firstName + " " + lastName;
+        return (
+          username.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          fullName.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+      }
+    );
+
+    return new Response(200, {}, { users: searchedUsers });
+  }
   return new Response(200, {}, { users: this.db.users });
 };
 
@@ -58,6 +73,13 @@ export const editUserHandler = function (schema, request) {
     const { userData } = JSON.parse(request.requestBody);
     user = { ...user, ...userData, updatedAt: formatDate() };
     this.db.users.update({ _id: user._id }, user);
+
+    this.db.posts.forEach((post) => {
+      if (post.userId === user._id) {
+        let updatedPost = { ...post, profileImage: user.profileImage };
+        this.db.posts.update({ _id: post._id }, updatedPost);
+      }
+    });
     return new Response(201, {}, { user });
   } catch (error) {
     return new Response(
@@ -89,7 +111,12 @@ export const getBookmarkPostsHandler = function (schema, request) {
         }
       );
     }
-    return new Response(200, {}, { bookmarks: user.bookmarks });
+    const bookmarkPostIds = user.bookmarks.map(({ _id }) => _id);
+    const bookmarkPostIdSet = new Set(bookmarkPostIds);
+    const bookmarks = this.db.posts.filter(({ _id }) =>
+      bookmarkPostIdSet.has(_id)
+    );
+    return new Response(200, {}, { bookmarks });
   } catch (error) {
     return new Response(
       500,
@@ -177,7 +204,14 @@ export const removePostFromBookmarkHandler = function (schema, request) {
     const filteredBookmarks = user.bookmarks.filter(
       (currPost) => currPost._id !== postId
     );
-    user = { ...user, bookmarks: filteredBookmarks };
+    const bookmarkPostIds = filteredBookmarks.map(({ _id }) => _id);
+    const bookmarkPostIdSet = new Set(bookmarkPostIds);
+    const bookmarks = this.db.posts.filter(({ _id }) =>
+      bookmarkPostIdSet.has(_id)
+    );
+
+
+    user = { ...user, bookmarks };
     this.db.users.update(
       { _id: user._id },
       { ...user, updatedAt: formatDate() }
