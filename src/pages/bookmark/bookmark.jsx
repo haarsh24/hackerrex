@@ -15,9 +15,10 @@ const Bookmark = () => {
             <SideBar />
                 <BottomNav />
                
-            <main className='mt-14 '>
+               {bookmarks ==0?<span className="p-2 text-xl flex justify-center"> Bookmark posts to see here</span>: <main className='mt-14 '>
+                    
             {bookmarks.map(item => <PostCard key={item._id} post={item} />)}
-            </main>
+            </main>}
             <PeopleToFollow />
             </div>
         </>

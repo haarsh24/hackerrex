@@ -43,7 +43,7 @@ const Signup = () => {
     <>
       <div className="flex justify-center my-4 py-12 items-center w-full">
         <form
-          className=" shadow-md  bg-[#141820] rounded-xl px-8 pt-6 pb-8 mb-4"
+          className=" shadow-md  bg-[#141820] rounded-2xl px-8 pt-6 pb-8 mb-4"
           onSubmit={submitHandler}
         >
           <div className="mb-4">

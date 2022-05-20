@@ -31,9 +31,9 @@ const Login = () => {
   }, [user, location, navigate]);
   return (
     <>
-      <div className="w-full h-full  flex h-[100vh] py-24 justify-center align-center ">
+      <div className="w-full   flex h-[100vh] py-24 justify-center align-center ">
         <form
-          className="shadow-md bg-[#141820] rounded-xl py-8 px-8 pt-6 pb-8 mb-4"
+          className="shadow-md bg-[#141820] rounded-2xl py-8 px-8 pt-6 pb-8 mb-4"
           onSubmit={submitHandler}
         >
           <div className="mb-4">

@@ -28,6 +28,9 @@ const ProfileCard = () => {
     return (
         <>
             <div className='flex items-center'>
+                <div className="flex flex-col my-6 mx-6">
+                <div>
+                        <div className="flex justify-between">
                 <Link to="/">
                     {profileImage ? (<img
                         alt="profile"
@@ -38,13 +41,8 @@ const ProfileCard = () => {
                             {firstName[0].toUpperCase()}
                         </div>
                     )}
-                </Link>
-                <div className='flex flex-col py-4 m-2'>
-                    <div className='flex items-center'>
+                        </Link>
                         <div>
-                            <p className='mr-4'>{firstName} {lastName}</p>
-                            <p className='mr-4'>@{username}</p>
-                        </div>
                         <button
                             className='py-2 px-4 mr-4 bg-sky-500 text-white rounded hover:bg-sky-500/50'
                             onClick={editProfileHandler}
@@ -52,7 +50,17 @@ const ProfileCard = () => {
                             Edit
                         </button>
                         <button className='py-2 px-4 text-sky-500 border border-sky-500 bg-white rounded hover:text-white hover:bg-sky-500/50'
-                            onClick={logoutHandler}>Logout</button>
+                                onClick={logoutHandler}>Logout</button>
+                            </div>
+                        </div>
+                    </div>
+                <div className='flex flex-col py-4 m-2'>
+                    <div className='flex items-center'>
+                        <div>
+                            <p className='mr-4'>{firstName} {lastName}</p>
+                            <p className='mr-4'>@{username}</p>
+                        </div>
+                        
                     </div>
                     <div className='flex justify-between mt-3'>
 
@@ -85,9 +93,10 @@ const ProfileCard = () => {
                             </a></span>
                         </p>
                     </div>
-                </div>
+                    </div>
+                    </div>
             </div>
-            <div className='my-2'>
+            <div className='my-2 '>
                 {usersPost.map(post => <PostCard key={post._id} post={post} />)}
             </div>
         </>
