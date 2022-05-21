@@ -40,7 +40,7 @@ const PostCard = ({post}) => {
         dispatch(deletePost(_id))
     }
     return (
-        <article className="bg-[#0C0F13]  rounded-2xl  rounded mb-5  mx-4 lg:mx-0 md:mr-6">
+        <article className="bg-[#0C0F13]  rounded-2xl mb-5  mx-4 lg:mx-0 md:mr-6">
             <section className="flex py-2">
             <Link to="/">
                     {profileImage ? (<img
