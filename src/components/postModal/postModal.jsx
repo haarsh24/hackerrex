@@ -60,7 +60,7 @@ const PostModal = () => {
     }
     return (
         <>
-            <aside className='mt-14  mx-auto  bg-[#0C0F13]  rounded-2xl m-10  rounded-md w-full max-w-[35rem] top-[10vh] h-[35vh] rounded'>
+            <aside className='mt-14  mx-auto  bg-[#0C0F13]  rounded-2xl m-10   w-full max-w-[35rem] top-[10vh] h-[35vh] '>
                 <form
                     onSubmit={submitHandler}
                     className='p-2 flex flex-col'>

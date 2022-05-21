@@ -31,4 +31,18 @@ export const users = [
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
+  {
+    _id: "harsh-kumar-test-userId",
+    firstName: "Harsh",
+    lastName: "Kumar",
+    username: "harshkumar",
+    password: "harsh@123",
+    websiteUrl: "https://www.twitter.com/codeandchords",
+    profileImage: {
+      original_filename: "harsh-profile",
+    },
+    bio: "My Money dont jiggle jiggle , it goes !",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+  },
 ];
