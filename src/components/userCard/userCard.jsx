@@ -4,9 +4,11 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getFollowingStatus } from '../../utilities/utilities';
 import { followUser, unFollowUser } from '../../store/feature/profileSlice';
+
 const UserCard = ({ user }) => {
     const { _id, firstName, lastName, username, profileImage } = user
     const dispatch = useDispatch();
+    const { user: currentUser } = useAuth();
     const { userFollowing } = useProfile();
     const isFollowing = getFollowingStatus(userFollowing, _id);
     const followUserHandler = () => {
@@ -39,12 +41,12 @@ const UserCard = ({ user }) => {
                         </div>
                     </div>
                 </Link>
-                <button
+                {username !== currentUser.username && (<button
                     className='ml-auto py-2 px-4 mr-4 bg-sky-500 text-white rounded hover:bg-sky-500/50'
                     onClick={followUserHandler}
                 >
                     {isFollowing ? "Following" : "Follow"}
-                </button>
+                </button>)}
             </div>
         </div>
     )

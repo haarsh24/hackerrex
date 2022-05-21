@@ -20,19 +20,22 @@ const Explore = () => {
         dispatch(getPost());
     }, [dispatch]);
     return (
-            <div className='grid lg:grid-cols-3 mt-14 h-[100vh]  md:grid-cols-2 grid-cols-1'>
+            <div className='grid lg:grid-cols-3 mt-14 md:grid-cols-2 grid-cols-1'>
             <SideBar />
             <BottomNav />
+            
             <div className='flex flex-col'>
-           <  PostModal/>
+                <  PostModal />
+                
             <main>
-            {exploreFeed > 0 ? (
+            {exploreFeed.length > 0 ? (
                     exploreFeed.map(post => <PostCard key={post._id} post={post} />)) : (
                     <p className='text-center font-semibold mt-8'>No Post to show.</p>
                 )}
                 </main>
+                
                 </div>
-            <PeopleToFollow />
+                <PeopleToFollow />
             </div>
        
     )

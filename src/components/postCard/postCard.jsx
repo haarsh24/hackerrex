@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { showModal } from '../../store/feature/modalSlice';
 import { addBookMarkPost, deletePost, disLikePost, editPost, likePost, removeBookMarkPost } from '../../store/feature/postSlice';
-import { getPostBookmarkStatus, getPostLikedStatus } from "../../utilities/utilities"
+import { getPostBookmarkStatus, getPostLikedStatus ,getDate} from "../../utilities/utilities"
 const PostCard = ({post}) => {
     const [showDropDown, setShowDropDown] = useState(false);
     const { user } = useAuth();
@@ -14,7 +14,7 @@ const PostCard = ({post}) => {
     const { bookmarks } = usePost();
     const dispatch = useDispatch();
 
-    const { _id, content, firstName, lastName, username, profileImage, mediaContent, likes } = post;
+    const { _id, content, firstName, lastName, username, profileImage, mediaContent, likes ,updatedAt} = post;
     const isPostLiked = getPostLikedStatus(user, likes);
     const isBookmarked = getPostBookmarkStatus(_id, bookmarks);
     const likePostHandler = () => {
@@ -58,7 +58,7 @@ const PostCard = ({post}) => {
                 <span>{firstName} {lastName}</span>
                     <div className='flex'>
                         <span className='mr-2'>@{username}</span>
-                        <span>10 days ago</span>
+                        <span>{getDate(updatedAt)}</span>
                     </div>
                 </div>
                 {username === user?.username && <div className='relative'>

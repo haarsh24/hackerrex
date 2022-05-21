@@ -41,7 +41,7 @@ const Signup = () => {
   }, [user, navigate]);
   return (
     <>
-      <div className="flex justify-center my-4 py-12 items-center w-full">
+      <div className="flex justify-center py-20  items-center w-full">
         <form
           className=" shadow-md  bg-[#141820] rounded-2xl px-8 pt-6 pb-8 mb-4"
           onSubmit={submitHandler}

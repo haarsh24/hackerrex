@@ -26,7 +26,7 @@ export const users = [
     _id: uuid(),
     firstName: "Kumar",
     lastName: "Harsh",
-    username: "kumar@harsh.com",
+    username: "haarshn",
     password: "harsh123",
     createdAt: formatDate(),
     updatedAt: formatDate(),
@@ -38,9 +38,7 @@ export const users = [
     username: "harshkumar",
     password: "harsh@123",
     websiteUrl: "https://www.twitter.com/codeandchords",
-    profileImage: {
-      original_filename: "harsh-profile",
-    },
+
     bio: "My Money dont jiggle jiggle , it goes !",
     createdAt: formatDate(),
     updatedAt: formatDate(),

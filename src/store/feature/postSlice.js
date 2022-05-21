@@ -6,6 +6,7 @@ const initialState = {
     posts: [],
     isLoading: false,
     bookmarks: [],
+    postSortType: "",
     error: null,
 }
 export const getPost = createAsyncThunk("posts/getPost",
@@ -116,7 +117,11 @@ export const deletePost = createAsyncThunk(
 export const postSlice = createSlice({
     name: "posts",
     initialState,
-    reducers: {},
+    reducers: {
+        setPostSortType: (state, { payload }) => {
+            state.postSortType = payload;
+        },
+    },
     extraReducers: {
         [getPost.pending]: (state) => {
             state.isLoading = true;
@@ -186,4 +191,5 @@ export const postSlice = createSlice({
         }
     },
 });
+export const { setPostSortType } = postSlice.actions;
 export const postReducer = postSlice.reducer;

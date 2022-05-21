@@ -15,7 +15,7 @@ const Login = () => {
   });
 
   const testHandler = () => {
-    loginDispatch({ type: "SET_EMAIL", payload: "kumar@harsh.com" });
+    loginDispatch({ type: "SET_EMAIL", payload: "haarshn" });
     loginDispatch({ type: "SET_PASSWORD", payload: "harsh123" });
   };
 
