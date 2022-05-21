@@ -6,7 +6,7 @@ import { BottomNav } from '../../components/navbar/bottomNav';
 import { PostModal } from '../../components/postModal/postModal';
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-
+import { getExploreFeed } from "../../utilities/utilities"
 import { getPost, setPostSortType } from '../../store/feature/postSlice'
 import { getHomeFeed, getPostsBySortType } from '../../utilities/utilities'
 import { useAuth, usePost, useProfile } from '../../hooks/selectors'
@@ -15,7 +15,7 @@ const Feed = () => {
     const dispatch = useDispatch();
     const { userFollowing } = useProfile();
     const { posts, postSortType } = usePost();
-
+    const exploreFeed = getExploreFeed(user, posts, userFollowing)
     const homeFeed = getHomeFeed(user, posts, userFollowing);
     const sortedHomeFeed = getPostsBySortType(homeFeed, postSortType);
     console.log(sortedHomeFeed);
@@ -27,7 +27,7 @@ const Feed = () => {
         dispatch(setPostSortType(type))
     }
     return (
-            <div className='grid lg:grid-cols-3 mt-14 py-4 h-[100vh] md:grid-cols-2 grid-cols-1'>
+            <div className='grid lg:grid-cols-3 mt-14 py-4  md:grid-cols-2 grid-cols-1'>
             <SideBar />
             <BottomNav />
             <div className='flex flex-col'>
@@ -46,11 +46,13 @@ const Feed = () => {
                     </div>
                     <  PostModal/>
                 {sortedHomeFeed.length > 0 ? sortedHomeFeed.map(post => <PostCard key={post._id} post={post} />) : (
-                    <p className="text-center font-semibold mt-8">
-                        Follow some people to show content here
+                    <p className="">
+                        
+                        {exploreFeed.map(post => <PostCard key={post._id} post={post} />) }
                     </p>
                 )}
                 </main>
+                
                 </div>
             <PeopleToFollow />
             </div>

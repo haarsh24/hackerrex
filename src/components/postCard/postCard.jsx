@@ -14,7 +14,7 @@ const PostCard = ({post}) => {
     const { bookmarks } = usePost();
     const dispatch = useDispatch();
 
-    const { _id, content, firstName, lastName, username, profileImage, mediaContent, likes ,updatedAt} = post;
+    const { _id, content, firstName, lastName, username,userId, profileImage, mediaContent, likes ,updatedAt} = post;
     const isPostLiked = getPostLikedStatus(user, likes);
     const isBookmarked = getPostBookmarkStatus(_id, bookmarks);
     const likePostHandler = () => {
@@ -42,7 +42,7 @@ const PostCard = ({post}) => {
     return (
         <article className="bg-[#0C0F13]  rounded-2xl mb-5  mx-4 lg:mx-0 md:mr-6">
             <section className="flex py-2">
-            <Link to="/">
+            <Link to={`/profile/${userId}`}>
                     {profileImage ? (<img
                         alt="profile"
                         loading="lazy"
