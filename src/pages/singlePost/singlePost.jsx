@@ -55,8 +55,11 @@ const SinglePost = () => {
                         id="comment"
                         name="comment"
                         value={comment}
-                        onChange={(e) => setComment(e.target.value)} />
-                    <button className="text-white mx-2 bg-sky-500 px-4 py-2 rounded">Post</button>
+                            onChange={(e) => setComment(e.target.value)} />
+                        <button
+                        disabled={!comment}
+                        className={`${comment ? "bg-sky-500" : "bg-sky-500/25"}  text-white mx-2  px-4 py-2 rounded`}>Post</button>
+                    
                    
                     </form>}
                 {post.comments.length > 0 &&

@@ -4,6 +4,7 @@ import { PostCard } from '../../components/postCard/postCard';
 import { PeopleToFollow } from '../../components/peopleToFollow/peopleToFollow';
 import { BottomNav } from '../../components/navbar/bottomNav';
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom';
 import { usePost } from '../../hooks/selectors';
 const Bookmark = () => {
     const arr = [1, 2, 3]
@@ -14,11 +15,17 @@ const Bookmark = () => {
             <div className='grid lg:grid-cols-3 mt-14 py-4 h-[100vh] md:grid-cols-2 grid-cols-1'>
             <SideBar />
                 <BottomNav />
-               
-               {bookmarks ==0?<span className="p-2 text-xl flex justify-center"> Bookmark posts to see here</span>: <main className='mt-14 '>
-                    
-            {bookmarks.map(item => <PostCard key={item._id} post={item} />)}
-            </main>}
+                <main className='my-14 '>
+                {bookmarks.length > 0 ? (
+                    bookmarks.map(item => <PostCard key={item._id} post={item} />)) :
+                    (<p className="text-center font-semibold mt-8 my-8">
+                        You don't have any bookmarks
+                        <Link to="/explore" className="text-sky-500 hover:underline ml-1">
+                            Explore
+                        </Link>
+                    </p>)
+                } 
+            </main>
             <PeopleToFollow />
             </div>
         </>

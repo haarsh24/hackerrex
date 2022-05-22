@@ -41,6 +41,7 @@ const ProfileModal = () => {
             lastName: editLastName,
             bio: editBio,
             websiteUrl: editWebsiteUrl,
+            profileImage: editProfileImage,
         };
         dispatch(editUser({ userData }));
         dispatch(closeModal());
