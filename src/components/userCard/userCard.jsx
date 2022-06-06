@@ -29,7 +29,7 @@ const UserCard = ({ user }) => {
                         loading="lazy"
                         src="https://i.pravatar.cc/300"
                         className='w-12 h-12 border rounded-full bg-gray-200 mx-2' />) : (
-                        <div className='w-12 h-12 flex items-center justify-center font-semibold text-xl border rounded-full bg-sky-200 mx-2'>
+                        <div className='w-12 h-12 flex items-center justify-center font-semibold text-xl border rounded-full bg-indigoigo-200 mx-2'>
                             {firstName && firstName[0].toUpperCase()}
                         </div>
                     )}
@@ -42,7 +42,7 @@ const UserCard = ({ user }) => {
                     </div>
                 </Link>
                 {username !== currentUser.username && (<button
-                    className='ml-auto py-2 px-4 mr-4 bg-sky-500 text-white rounded hover:bg-sky-500/50'
+                    className='ml-auto py-2 px-4 mr-4 bg-indigo-500 text-white rounded hover:bg-indigo-500/50'
                     onClick={followUserHandler}
                 >
                     {isFollowing ? "Following" : "Follow"}

@@ -43,7 +43,7 @@ const ProfileCard = () => {
                         loading="lazy"
                         src={profileImage?.url}
                         className='w-12 h-12 border rounded-full bg-gray-200 mx-5' />) : (
-                        <div className='w-16 h-16 flex items-center justify-center font-semibold text-xl border rounded-full bg-sky-200 mx-5'>
+                        <div className='w-16 h-16 flex items-center justify-center font-semibold text-xl border rounded-full bg-indigo-200 mx-5'>
                             {firstName && firstName[0].toUpperCase()}
                         </div>
                     )}
@@ -57,16 +57,16 @@ const ProfileCard = () => {
                         {userId === user._id ? (
                             <>
                                 <button
-                                    className='py-2 px-4 mr-4 bg-sky-500 text-white rounded hover:bg-sky-500/50'
+                                    className='py-2 px-4 mr-4 bg-indigo-500 text-white rounded hover:bg-indigo-500/50'
                                     onClick={editProfileHandler}
                                 >
                                     Edit
                                 </button>
-                                <button className='py-2 px-4 text-sky-500 border border-sky-500 bg-white rounded hover:text-white hover:bg-sky-500/50'
+                                <button className='py-2 px-4 text-indigo-500 border border-indigo-500 bg-white rounded hover:text-white hover:bg-indigo-500/50'
                                     onClick={logoutHandler}>Logout</button>
                             </>) :
                             (<button
-                                className='py-2 px-4 mr-4 bg-sky-500 text-white rounded hover:bg-sky-500/50'
+                                className='py-2 px-4 mr-4 bg-indigo-500 text-white rounded hover:bg-indigo-500/50'
                                 onClick={followUserHandler}
                             >
                                 {isFollowing ? "Following" : "Follow"}
@@ -97,7 +97,7 @@ const ProfileCard = () => {
                     <div className='mt-3'>
                         <p>{bio}</p>
                         <p>Website:
-                            <span className='text-sky-500'><a
+                            <span className='text-indigo-500'><a
                                 target="_blank"
                                 href={websiteUrl}>
                                 {websiteUrl}

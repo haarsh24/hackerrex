@@ -21,7 +21,7 @@ const SideBar = () => {
                         title={name}
                         className={({ isActive }) =>
                             `${isActive ? " text-white" : ""
-                            } p-2 flex w-full items-center rounded-2xl hover:text-sky-50 hover:bg-sky-500  `
+                            } p-2 flex w-full items-center rounded-2xl hover:text-indigo-50 hover:bg-indigo-500  `
                         }
                     >
                         <span className='material-icons'>

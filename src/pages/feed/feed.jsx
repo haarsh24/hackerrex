@@ -36,11 +36,11 @@ const Feed = () => {
             <div className='flex justify-center gap-4 my-6'>
                     <span>Sort by:</span>
                     <button
-                        className='px-2 py-1 bg-sky-500 text-white hover:bg-sky-500/75 rounded hover:transition-all'
+                        className='px-2 py-1 bg-indigo-500 text-white hover:bg-indigo-500/75 rounded hover:transition-all'
                         onClick={() => filterHandler("SORT_BY_RECENT")}
                     >Recent</button>
                     <button
-                        className='px-2 py-1 bg-sky-500 text-white hover:bg-sky-500/75 rounded hover:transition-all'
+                        className='px-2 py-1 bg-indigo-500 text-white hover:bg-indigo-500/75 rounded hover:transition-all'
                         onClick={() => filterHandler("SORT_BY_TRENDING")}
                     >Trending</button>
                     </div>

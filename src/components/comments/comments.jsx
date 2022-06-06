@@ -13,7 +13,7 @@ const Comments = ({ comment,username,
                     loading="lazy"
                     src="https://i.pravatar.cc/300"
                     className='w-12 h-12 border rounded-full bg-gray-200 mx-2' />) : (
-                    <div className='w-12 h-12 flex items-center justify-center font-semibold text-xl  rounded-full bg-sky-200 mx-2'>
+                    <div className='w-12 h-12 flex items-center justify-center font-semibold text-xl  rounded-full bg-indigo-200 mx-2'>
                         {firstName[0].toUpperCase()}
                     </div>
                 )}

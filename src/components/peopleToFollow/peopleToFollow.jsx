@@ -34,13 +34,13 @@ const PeopleToFollow = () => {
                             <img
                                 alt="profile"
                                 loading="lazy"
-                                src="https://i.pravatar.cc/1000"
+                                src="https://i.pravatar.cc/300"
                                 className='mr-4 w-12 h-12  rounded-full bg-gray-200 ml-5' />
                             <div className='flex flex-col mr-auto'>
                                 <p>{user.firstName} {user.lastName}</p>
                                 <p>@{user.username}</p>
                             </div>
-                            <button className='mr-4 text-sky-500 hover:text-sky-700'>Open</button>
+                            <button className='mr-4 text-indigo-500 hover:text-indigo-700'>Open</button>
                         </div>
                     </Link>
                 ))}

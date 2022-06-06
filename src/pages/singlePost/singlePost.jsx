@@ -41,7 +41,7 @@ const SinglePost = () => {
                             loading="lazy"
                             src="https://i.pravatar.cc/300"
                             className='w-12 h-12 border rounded-full bg-gray-200 mx-5' />) : (
-                            <div className='w-12 h-12 flex items-center justify-center font-semibold text-xl border rounded-full bg-sky-200 mx-5'>
+                            <div className='w-12 h-12 flex items-center justify-center font-semibold text-xl border rounded-full bg-indigo-200 mx-5'>
                                 {firstName[0].toUpperCase()}
                             </div>
                         )}
@@ -49,7 +49,7 @@ const SinglePost = () => {
                         
                         
                     
-                    <input className='w-full h-10 border-1 border-sky-500 border-solid rounded p-2 ml-2 shadow-md resize-none dark:text-white dark:bg-slate-700 focus:outline-none'
+                    <input className='w-full h-10 border-1 border-indigo-500 border-solid rounded p-2 ml-2 shadow-md resize-none dark:text-white dark:bg-slate-700 focus:outline-none'
                         type="text"
                         placeholder='Add your comments here'
                         id="comment"
@@ -58,7 +58,7 @@ const SinglePost = () => {
                             onChange={(e) => setComment(e.target.value)} />
                         <button
                         disabled={!comment}
-                        className={`${comment ? "bg-sky-500" : "bg-sky-500/25"}  text-white mx-2  px-4 py-2 rounded`}>Post</button>
+                        className={`${comment ? "bg-indigo-500" : "bg-indigo-500/25"}  text-white mx-2  px-4 py-2 rounded`}>Post</button>
                     
                    
                     </form>}

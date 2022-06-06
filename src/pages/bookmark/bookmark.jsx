@@ -20,7 +20,7 @@ const Bookmark = () => {
                     bookmarks.map(item => <PostCard key={item._id} post={item} />)) :
                     (<p className="text-center font-semibold mt-8 my-8">
                         You don't have any bookmarks
-                        <Link to="/explore" className="text-sky-500 hover:underline ml-1">
+                        <Link to="/explore" className="text-indigo-500 hover:underline ml-1">
                             Explore
                         </Link>
                     </p>)

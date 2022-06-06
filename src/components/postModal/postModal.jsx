@@ -66,7 +66,7 @@ const PostModal = () => {
                     className='p-2 flex flex-col'>
                     <textarea
                         placeholder="What's on your mind ?"
-                        className='w-full h-36 p-3 m-1  bg-[#141820] resize-none rounded-2xl border focus:outline-2 focus:outline-sky-500 mx-auto'
+                        className='w-full h-36 p-3 m-1  bg-[#141820] resize-none rounded-2xl border focus:outline-2 focus:outline-indigo-500 mx-auto'
                         maxLength={postLimit}
                         onChange={(e) => setContent(e.target.value)}
                         value={content}></textarea>
@@ -83,7 +83,7 @@ const PostModal = () => {
                         <label
                             className="tooltip flex items-center"
                         >
-                            <span className=" select-none w-10 h-10 flex items-center justify-center rounded-full hover:cursor-pointer text-2xl text-sky-500 hover:bg-sky-700">
+                            <span className=" select-none w-10 h-10 flex items-center justify-center rounded-full hover:cursor-pointer text-2xl text-indigo-500 hover:bg-indigo-700">
                                 
                             </span>
                             <input
@@ -102,14 +102,14 @@ const PostModal = () => {
                             {content.length} / {postLimit}
                         </span>
                         <button
-                            className='px-2 py-1 mx-2 text-sky-500 border border-sky-500 bg-white hover:bg-sky-500 hover:text-white rounded hover:transition-all'
+                            className='px-2 py-1 mx-2 text-indigo-500 border border-indigo-500 bg-white hover:bg-indigo-500 hover:text-white rounded hover:transition-all'
                             type="button"
                             onClick={() => dispatch(closeModal())}>
                             Cancel
                         </button>
                         <button
                             disabled={content.length === 0 && !mediaContent}
-                            className={`${content.length === 0 && !mediaContent && "opacity-50"} px-2 py-1 bg-sky-500 text-white hover:bg-sky-500/25 rounded hover:transition-all`}>
+                            className={`${content.length === 0 && !mediaContent && "opacity-50"} px-2 py-1 bg-indigo-500 text-white hover:bg-indigo-500/25 rounded hover:transition-all`}>
                             {currentPost ? "Update" : "Add Post"}
                         </button>
                     </div>

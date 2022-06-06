@@ -48,7 +48,7 @@ const PostCard = ({post}) => {
                         loading="lazy"
                         src={profileImage}
                         className='w-12 h-12 rounded-full  mx-5' />) : (
-                        <div className='w-12 h-12 flex items-center justify-center font-semibold text-xl border rounded-full bg-sky-200 mx-5'>
+                        <div className='w-12 h-12 flex items-center justify-center font-semibold text-xl border rounded-full bg-indigo-200 mx-5'>
                             {firstName[0].toUpperCase()}
                         </div>
                     )}
@@ -63,7 +63,7 @@ const PostCard = ({post}) => {
                 </div>
                 {username === user?.username && <div className='relative'>
                     <button
-                        className='mr-3 w-10 h-10 flex justify-center items-center hover:text-sky-50 hover:bg-sky-500/25 rounded-full'
+                        className='mr-3 w-10 h-10 flex justify-center items-center hover:text-indigo-50 hover:bg-indigo-500/25 rounded-full'
                         onClick={() => setShowDropDown(pre => !pre)}>
                         <span className="material-icons">
                             more_horiz
@@ -72,10 +72,10 @@ const PostCard = ({post}) => {
                     {showDropDown && (
                         <div className='absolute right-0 mx-2 bg-slate-50 px-4 py-2 rounded min-w-max w-32'>
                             <button
-                                className='w-full py-1 rounded hover:text-sky-500'
+                                className='w-full py-1 rounded hover:text-indigo-500'
                                 onClick={editPostHandler}>Edit</button>
                             <button
-                                className='w-full py-1 rounded hover:text-sky-500'
+                                className='w-full py-1 rounded hover:text-indigo-500'
                                 onClick={deletePostHandler}>Delete</button>
                         </div>
                     )}
@@ -98,7 +98,7 @@ const PostCard = ({post}) => {
             <div className='flex justify-between py-1 mx-5'>
             <div className=''>
             <button
-                        className='w-10 h-10 flex justify-center items-center hover:text-sky-50 hover:bg-sky-500/25 rounded-full'
+                        className='w-10 h-10 flex justify-center items-center hover:text-indigo-50 hover:bg-indigo-500/25 rounded-full'
                         onClick={likePostHandler}>
                         {isPostLiked ? (<span className="material-icons">
                             favorite
@@ -111,14 +111,14 @@ const PostCard = ({post}) => {
                 </div>
                 <div>
                 <button
-                        className='w-10 h-10 flex justify-center items-center hover:text-sky-50 hover:bg-sky-500/25 rounded-full'
+                        className='w-10 h-10 flex justify-center items-center hover:text-indigo-50 hover:bg-indigo-500/25 rounded-full'
                         onClick={() => { navigate(`/post/${post._id}`); }}>
                         <span className="material-icons">
                             chat_bubble_outline
                         </span>
                     </button>
                 </div>
-                <button className='w-10 h-10 flex justify-center items-center hover:text-sky-50 hover:bg-sky-500/25 rounded-full'
+                <button className='w-10 h-10 flex justify-center items-center hover:text-indigoigo-50 hovindigoindigoindigo-500/25 rounded-full'
                     onClick={bookmarkHandler}>
                     {isBookmarked ? (
                         <span className="material-icons">

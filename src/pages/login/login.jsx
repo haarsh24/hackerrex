@@ -4,6 +4,9 @@ import { useAuth } from "../../hooks/selectors";
 import React, { useEffect, useReducer } from "react";
 import { loginFormReducer } from "./loginFormReducer";
 import { loginUser } from '../../store/feature/authSlice';
+import  socialMedia  from "../../assets/social-media.svg" 
+
+
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -32,6 +35,7 @@ const Login = () => {
   return (
     <>
       <div className="w-full   flex h-[100vh] py-24 justify-center align-center ">
+        <img className="p-6" src={socialMedia}/>
         <form
           className="shadow-md bg-[#141820] rounded-2xl py-8 px-8 pt-6 pb-8 mb-4"
           onSubmit={submitHandler}
@@ -75,11 +79,11 @@ const Login = () => {
             />
           </div>
           <div>
-                    <button className="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-4" onClick={testHandler}>Test credentials</button>
+                    <button className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-4" onClick={testHandler}>Test credentials</button>
                 </div>
           <div>
             <button
-              className="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="button"
             >
               Log In
@@ -87,7 +91,7 @@ const Login = () => {
           </div>
           <div className="mt-4">
             Don't have an account yet?{" "}
-            <Link to="/signup" className="text-sky-500 hover:text-sky-700">
+            <Link to="/signup" className="text-indigo-500 hover:text-indigo-700">
               Signup
             </Link>
           </div>

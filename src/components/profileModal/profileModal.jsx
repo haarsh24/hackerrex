@@ -61,14 +61,14 @@ const ProfileModal = () => {
                         </span>
                     </button>
                 </div>
-                <div className='w-16 h-16 inline-block relative flex items-center justify-center self-center font-semibold text-xl border rounded-full bg-sky-200'>
+                <div className='w-16 h-16 inline-block relative flex items-center justify-center self-center font-semibold text-xl border rounded-full bg-indigo-200'>
                     <label className=' cursor-pointer'>
                         {editProfileImage ? (<img
                             alt={editProfileImage.original_filename}
                             loading="lazy"
                             src={editProfileImage.url}
                             className='w-16 h-16 border rounded-full inline-block bg-gray-200' />) : (<>{firstName[0].toUpperCase()} </>)}
-                        <span className="material-icons  inline-block absolute bottom-1 -right-2 select-none  rounded-full hover:cursor-pointer text-2xl text-sky-500 ">
+                        <span className="material-icons  inline-block absolute bottom-1 -right-2 select-none  rounded-full hover:cursor-pointer text-2xl text-indigo-500 ">
                             add_a_photo
                         </span>
                         <input
@@ -147,7 +147,7 @@ const ProfileModal = () => {
 
                     <div className="flex items-center justify-between">
                         <button
-                            className="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         >
                             Update
                         </button>

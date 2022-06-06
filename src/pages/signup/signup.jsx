@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { signupFormReducer } from "./signupFormReducer";
 import { signupUser } from "../../store/feature/authSlice";
 import { useAuth } from "../../hooks/selectors";
+import  socialMedia  from "../../assets/social-media.svg" 
 const Signup = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
@@ -42,6 +43,7 @@ const Signup = () => {
   return (
     <>
       <div className="flex justify-center py-20  items-center w-full">
+      <img className="p-16" src={socialMedia}/>
         <form
           className=" shadow-md  bg-[#141820] rounded-2xl px-8 pt-6 pb-8 mb-4"
           onSubmit={submitHandler}
@@ -176,11 +178,11 @@ const Signup = () => {
             />
           </div>
           <div className="flex items-center justify-between">
-            <button className="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <button className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
               Signup
             </button>
             <Link
-              className="inline-block align-baseline font-bold text-sm text-sky-500 hover:text-sky-700"
+              className="inline-block align-baseline font-bold text-sm text-indigo-500 hover:text-indigo-700"
               to="#"
             >
               Forgot Password?
@@ -188,7 +190,7 @@ const Signup = () => {
           </div>
           <div className="mt-4">
             Already a user?{" "}
-            <Link to="/login" className="text-sky-500 hover:text-sky-700">
+            <Link to="/login" className="text-indigo-500 hover:text-indigo-700">
               Login
             </Link>
           </div>

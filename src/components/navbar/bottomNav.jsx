@@ -11,8 +11,8 @@ const BottomNav = () => {
                     to={path}
                     title={name}
                     className={({ isActive }) =>
-                        `${isActive ? " text-sky-50" : ""
-                        } flex w-full items-center bg-zinc rounded hover:text-sky-50 hover:bg-sky-500 rounded`
+                        `${isActive ? " text-indigo-50" : ""
+                        } flex w-full items-center bg-zinc rounded hover:text-indigo-50 hover:bg-indigo-500 rounded`
                     }
                 >
                     <span className='material-icons'>
